@@ -1,0 +1,12 @@
+			RECEIPT
+QTY		ITEM				 COST
+2       De Anza Burger       $10.50   
+1       Bacon Cheese         $7.75    
+0       Mushroom Swiss       $0.00    
+0       Western Burger       $0.00    
+3       Don Cali Burger      $17.85   
+
+
+SUBTOTAL				 72.20   
+TAX						 0.00    
+TOTAL					 72.20   
