@@ -1,0 +1,49 @@
+# Keilani Li
+# The following coding program creates Fibonacci numbers using an iterator class and a generator function
+
+class Iterator:
+    '''this class is an iterator that creates fibonacci numbers until it reaches a limit'''
+    def __init__(self, limit):
+        self._limit = limit
+
+    def __iter__(self):
+        self._num1 = 0
+        self._num2 = 1
+        return self
+
+    def __next__(self):
+        self.return_num = self._num1
+
+        if self._num1 > self._limit:
+            raise StopIteration
+
+        self._num3 = self._num1 + self._num2
+        self._num1 = self._num2
+        self._num2 = self._num3
+
+        return self.return_num
+
+def fibonacciGenerator():
+    '''this generator function creates fibonacci numbers'''
+    num1 = 0
+    num2 = 1
+    while True:
+        result = num1
+        num3 = num1 + num2
+        num1 = num2
+        num2 = num3
+        yield result
+
+fibonacciIter = Iterator(10)
+print('The iterator has generated:', *fibonacciIter)
+
+fibonacciGen = fibonacciGenerator()
+print('The generator has generated:', end = " ")
+for i in range(10): # the for loop uses the generator function to create the first 10 fibonacci numbers
+    print(next(fibonacciGen), end = " ")
+
+'''
+The iterator has generated: 0 1 1 2 3 5 8
+The generator has generated: 0 1 1 2 3 5 8 13 21 34 
+Process finished with exit code 0
+'''
